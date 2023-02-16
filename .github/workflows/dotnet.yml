@@ -42,4 +42,4 @@ jobs:
         dotnet build -c Release
         dotnet pack ./FSharp.AspNetCore.WebAppBuilder/FSharp.AspNetCore.WebAppBuilder.fsproj -c Release
     - name: Publish
-      run: dotnet nuget push bin/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./FSharp.AspNetCore.WebAppBuilder/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
