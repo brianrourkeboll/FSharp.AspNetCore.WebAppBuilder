@@ -78,10 +78,10 @@ let app builderConfig =
 ```fsharp
 let app =
     webApp {
-        get [
+        get "/hello" [
             Status200OK,       typeof<string>
             Status404NotFound, null
-        ] "/hello" (fun () ->
+        ] (fun () ->
             if DateTime.Today.DayOfWeek = DayOfWeek.Monday then Results.NotFound ()
             else Results.Ok "🌎"
         ) (fun routeHandler ->
