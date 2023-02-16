@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>FSharp.AspNetCore.WebAppBuilder</PackageId>
+    <Version>0.1.0-alpha.1</Version>
+    <Authors>Brian Rourke Boll</Authors>
+    <Description>A computation expression for succinctly defining ASP.NET Core web apps, including support for minimal APIs.</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/brianrourkeboll/FSharp.AspNetCore.WebAppBuilder</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageTags>F#;FSharp;aspnetcore</PackageTags>
+    <PackageIcon>logo.png</PackageIcon>
+    <Copyright>© 2023 Brian Rourke Boll</Copyright>
+    <!-- FS3390: XML documentation validation -->
+    <WarnOn>$(WarnOn);3390</WarnOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <Compile Include="WebAppBuilder.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Update="FSharp.Core" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <PackageReference Update="FSharp.Core" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
