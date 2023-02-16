@@ -1,0 +1,45 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore -c Release
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.x
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_API_KEY }}
+    - name: Pack
+      run: |
+        dotnet restore
+        dotnet build -c Release
+        dotnet pack ./FSharp.AspNetCore.WebAppBuilder/FSharp.AspNetCore.WebAppBuilder.fsproj -c Release
+    - name: Publish
+      run: dotnet nuget push --api-key ${{ secrets.NUGET_API_KEY }} bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json
