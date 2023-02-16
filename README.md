@@ -1,5 +1,6 @@
 # FSharp.AspNetCore.WebAppBuilder
-This library provides a lightweight computation expression for succinctly defining ASP.NET Core web applications, including support for minimal APIs. The goal is to optimize readability in common scenarios while including escape hatches so that you never need to work around the library.
+
+This library provides a lightweight computation expression for succinctly defining ASP.NET Core web applications, including support for minimal APIs. The goal is to optimize readability and discourage sprawl in common scenarios while including escape hatches so that you never need to work around the library.
 
 ## The `webApp` computation expression
 
@@ -19,9 +20,9 @@ The library includes a few more specialized custom keywords to make certain comm
 
 - `environmentVariables`, for adding environment variables to the app's configuration
 - `jsonFile`, for adding a JSON configuration file to the app's configuration
-- `singleton`, for adding a singleton instance of a dependency to the apps' dependency injection container
-- `hostedService`, for adding a hosted service to the apps' dependency injection container
-- `connectionString`, for adding a strongly-typed connection string to the apps' dependency injection container
+- `singleton`, for adding a singleton instance of a dependency to the app's dependency injection container
+- `hostedService`, for adding a hosted service to the app's dependency injection container
+- `connectionString`, for adding a strongly-typed connection string to the app's dependency injection container
 - `configurationValue`, for adding a strongly-typed configuration value to the apps' dependency injection container
 
 I might add one or two more if I have a strong use case 🙃.
@@ -84,7 +85,7 @@ let app =
             if DateTime.Today.DayOfWeek = DayOfWeek.Monday then Results.NotFound ()
             else Results.Ok "🌎"
         ) (fun routeHandler ->
-            routeHandler.WithOpenApi (fun op -> op.Description <- ""; op)
+            routeHandler.WithOpenApi (fun op -> op.Description <- "😶😶😶"; op)
             routeHandler.AllowAnonymous ()
         )
     }
