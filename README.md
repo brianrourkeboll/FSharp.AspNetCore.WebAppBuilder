@@ -42,7 +42,7 @@ let app =
 app.Run ()
 ```
 
-Defining a full CRUD app with Swagger UI, controllers, and support for integration testing doesn't take much more:
+Defining a full CRUD app with Swagger UI, [controllers](/Examples/MinimalWebAppWithControllers/Controllers/ClownsController.fs), and support for [integration testing](/Examples/Tests/MinimalWebAppWithControllersTests.fs) doesn't take much more:
 
 #### Program.fs
 
@@ -71,7 +71,7 @@ let app builderConfig =
 (app ignore).Run ()
 ```
 
-Minimal APIs are supported, including the ability to apply arbitrary configuration to your `RouteHandlerBuilder`s:
+[Minimal APIs are supported](/Examples/MinimalWebApp/Program.fs), including the ability to apply arbitrary configuration to your `RouteHandlerBuilder`s:
 
 #### Program.fs
 
