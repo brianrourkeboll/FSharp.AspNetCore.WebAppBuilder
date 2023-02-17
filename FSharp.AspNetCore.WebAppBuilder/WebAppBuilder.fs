@@ -5,7 +5,6 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
-open Microsoft.Extensions.Logging
 
 /// Creates a web application using computation expression syntax.
 [<Sealed>]
