@@ -533,67 +533,67 @@ module Gets =
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
-        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler)
+        member this.Get (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Get (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP GET endpoint.
         [<CustomOperation("get")>]
@@ -946,67 +946,67 @@ module Posts =
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
-        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler)
+        member this.Post (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Post (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP POST endpoint.
         [<CustomOperation("post")>]
@@ -1359,67 +1359,67 @@ module Puts =
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
-        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler)
+        member this.Put (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Put (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PUT endpoint.
         [<CustomOperation("put")>]
@@ -1772,67 +1772,67 @@ module Deletes =
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
-        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler)
+        member this.Delete (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Delete (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP DELETE endpoint.
         [<CustomOperation("delete")>]
@@ -2186,67 +2186,67 @@ module Patches =
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
-        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler)
+        member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, handler, ?configure=configure)
 
         /// Adds an HTTP PATCH endpoint.
         [<CustomOperation("patch")>]
