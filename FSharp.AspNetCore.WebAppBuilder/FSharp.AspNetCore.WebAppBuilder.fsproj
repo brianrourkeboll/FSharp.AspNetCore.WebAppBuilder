@@ -4,7 +4,7 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>FSharp.AspNetCore.WebAppBuilder</PackageId>
-    <Version>0.1.0-alpha.1</Version>
+    <Version>0.1.0-alpha.2</Version>
     <Authors>Brian Rourke Boll</Authors>
     <Description>A computation expression for succinctly defining ASP.NET Core web apps, including support for minimal APIs.</Description>
     <RepositoryType>git</RepositoryType>
