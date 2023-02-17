@@ -115,6 +115,8 @@ let ``POST /clowns returns 400 Bad Request if the shoe size is too small`` (Bad 
         | [|_|] -> ()
         | unexpected -> failwith $"Expected a single error message but got: %A{unexpected}"
     }
+    |> Async.AwaitTask
+    |> Async.RunSynchronously
 ```
 
 ## The `webApp` computation expression
