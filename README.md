@@ -2,6 +2,10 @@
 
 The `webApp` computation expression lets you define ASP.NET Core web applications in a succinct and declarative way, minimizing code, maximizing readability, and providing a simple but thorough set of escape hatches, so you can always drop down to the raw ASP.NET Core APIs when you need to.
 
+## Installation
+
+Get it on NuGet: [FSharp.AspNetCore.WebAppBuilder](https://www.nuget.org/packages/FSharp.AspNetCore.WebAppBuilder).
+
 ## Examples
 
 Hello, world.
