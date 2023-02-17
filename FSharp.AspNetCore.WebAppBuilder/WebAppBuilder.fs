@@ -92,10 +92,6 @@ type WebAppBuilder (args : string array) =
         ignore <| builder.Configuration.AddJsonFile (path, optional=true)
         builder
 
-    [<CustomOperation("consoleLogging")>]
-    member _.ConsoleLogging (builder : WebApplicationBuilder) =
-        ignore <| builder.Logging.AddConsole ()
-
     /// <summary>
     /// Adds a singleton service of the type specified in <paramref name="serviceType"/> to the
     /// app's service collection.
