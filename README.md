@@ -182,7 +182,7 @@ let app =
 
 > ❔: Why use a computation expression? Why not write an F# wrapper using "functions and data"? I don't see anything monadic or applicative happening here.
 
-Functions and data are absolutely more straightforward, robust, and maintainable than computation expressions with ad hoc custom operations—most of the time. But we're not designing a whole new web framework here: we're just trying to make the extensive functionality of the ASP.NET Core ecosystem a bit nicer to use in F#. There are two main things at play here:
+Functions and data are absolutely more straightforward, robust, and maintainable than computation expressions with ad hoc custom operations—most of the time. But we're not designing a whole new web framework here: we're just trying to make the extensive functionality of the ASP.NET Core ecosystem a bit nicer to use in F#. There are two main things at play:
 
 1. Method overloads.
 
