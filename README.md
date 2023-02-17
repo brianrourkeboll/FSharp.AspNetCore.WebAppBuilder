@@ -4,7 +4,7 @@ The `webApp` computation expression lets you define ASP.NET Core web application
 
 ## Installation
 
-Get it on NuGet: [FSharp.AspNetCore.WebAppBuilder](https://www.nuget.org/packages/FSharp.AspNetCore.WebAppBuilder).
+Get it on NuGet (currently still in pre-release): [FSharp.AspNetCore.WebAppBuilder](https://www.nuget.org/packages/FSharp.AspNetCore.WebAppBuilder).
 
 ## Examples
 
@@ -144,7 +144,9 @@ A few more specialized custom operations are provided to make certain common sce
 - `singleton`, for adding a singleton instance of a dependency to the app's dependency injection container.
 - `hostedService`, for adding a hosted background service to the app's dependency injection container.
 
-There are innumerable other special cases that could be added, corresponding to the innumerable first- and third-party `.Add*` extension methods and their even-more-innumerable overloads—`scoped`, `transient`, `serverSideBlazor`… I may add a few more, but it is unlikely that it will be many. You can always just call any extension method on `IServiceCollection` you like inside the `services` operation:
+The number of other special cases that could be added is practically infinite, corresponding to the countless first- and third-party `.Add*` extension methods and their even-more-countless overloads—`scoped`, `transient`, `serverSideBlazor`… A few more may be added, but it is unlikely to be many.
+
+You can always call any extension method on `IServiceCollection` you like inside the `services` operation, for example:
 
 ```fsharp
 services (fun services ->
@@ -155,14 +157,25 @@ services (fun services ->
 )
 ```
 
-And if you really want to, you can always extend the builder yourself:
+The same is true for any of the other top-level properties of `Microsoft.AspNetCore.Builder.WebApplicationBuilder`, or the built `Microsoft.AspNetCore.Builder.WebApplication`.
+
+### Adding your own custom operations to the `webApp` builder
+
+If you like, you can always add a custom operation corresponding to any first- or third-party API you choose by extending the `WebAppBuilder` yourself:
 
 ```fsharp
 type WebAppBuilder with
     [<CustomOperation("scoped")>]
     member _.Scoped (builder : WebApplicationBuilder, serviceType : Type, implementationType : Type) =
-        ignore <| builder.AddScoped (serviceType, implementationType)
+        ignore <| builder.Services.AddScoped (serviceType, implementationType)
         builder
+```
+
+```fsharp
+let app =
+    webApp {
+        scoped typeof<IScopedService> typeof<ScopedService>
+    }
 ```
 
 ## Rationale
