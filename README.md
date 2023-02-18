@@ -8,6 +8,10 @@ Get it on NuGet (currently still in pre-release): [FSharp.AspNetCore.WebAppBuild
 
 ## Examples
 
+```fsharp
+open FSharp.AspNetCore.Builder
+```
+
 Hello, world.
 
 #### Program.fs
@@ -66,7 +70,7 @@ let app =
 
         post "/xs" (fun (dataAccess : IDataAccess) newId x ->
             let x = dataAccess.Create (newId (), x)
-            Results.Created ($"/xs/{id}", x))
+            Results.Created ($"/xs/{x.Id}", x))
 
         delete "/xs/{id}" (fun (dataAccess : IDataAccess) id -> Results.NoContent (dataAccess.Delete id))
     }
