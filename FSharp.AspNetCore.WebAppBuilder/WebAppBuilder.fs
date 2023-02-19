@@ -6,6 +6,12 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 
+/// <namespacedoc>
+/// <summary>
+/// Contains the <c>webApp</c> computation expression builder.
+/// </summary>
+/// </namespacedoc>
+///
 /// <summary>
 /// Creates a web application using computation expression syntax.
 /// </summary>
