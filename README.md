@@ -169,6 +169,38 @@ services (fun services ->
 
 The same is true for any of the other top-level properties of `Microsoft.AspNetCore.Builder.WebApplicationBuilder`, or the built `Microsoft.AspNetCore.Builder.WebApplication`.
 
+### Minimal APIs endpoint support
+
+Add endpoints to your web app using custom operations corresponding to the `MapGet`, `MapPost`, etc., extension methods. Currently supported: [`get`](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-gets.html), [`post`](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-posts.html), [`put`](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-puts.html), [`delete`](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-deletes.html), and [`patch`](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-patches.html).
+
+All endpoint operations have overloads that take a `(int * Type) list` for specifying which status codes and types the endpoint produces, as well as overloads accepting a function that can be used to further configure the route handler.
+
+```fsharp
+open Microsoft.AspNetCore.Http.StatusCodes
+
+let app =
+    webApp {
+        get "/hello" (fun () -> "🌎")
+
+        get "/clowns"
+            [Status200OK, typeof<seq<Dtos.Get.Clown>>]
+            (fun (db : IDataAccess) -> Results.Ok (db.GetAll ()))
+
+        post "/clowns" [
+            Status201Created,             typeof<Dtos.Get.Clown>
+            Status400BadRequest,          typeof<ValidationProblemDetails>
+            Status409Conflict,            typeof<string>
+            Status500InternalServerError, typeof<ProblemDetails>
+        ] (fun (logger : ILogger<Program>) mkId (db : IDataAccess) clown ->
+            // ...
+            Results.Created ($"/clowns/{id}", clown)
+        ) (fun routeHandler ->
+            routeHandler.Accepts (typeof<Dtos.Update.Clown>, MediaTypeNames.Application.Json)
+            routeHandler.AddFilter<MyEndpointFilter> ()
+        )
+    }
+```
+
 ### Adding your own custom operations to the `webApp` builder
 
 If you like, you can always add a custom operation corresponding to any first- or third-party API you choose by extending the `WebAppBuilder` yourself:

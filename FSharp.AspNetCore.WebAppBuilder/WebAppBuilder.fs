@@ -8,12 +8,20 @@ open Microsoft.Extensions.Hosting
 
 /// <namespacedoc>
 /// <summary>
-/// Contains the <c>webApp</c> computation expression builder.
+/// Contains the <see cref="T:FSharp.AspNetCore.Builder.WebAppBuilder"/> computation expression builder.
 /// </summary>
 /// </namespacedoc>
 ///
 /// <summary>
 /// Creates a web application using computation expression syntax.
+/// <para>
+/// See also:
+/// <seealso cref="T:FSharp.AspNetCore.Builder.Gets"/>, 
+/// <seealso cref="T:FSharp.AspNetCore.Builder.Posts"/>, 
+/// <seealso cref="T:FSharp.AspNetCore.Builder.Puts"/>, 
+/// <seealso cref="T:FSharp.AspNetCore.Builder.Deletes"/>, 
+/// <seealso cref="T:FSharp.AspNetCore.Builder.Patches"/>.
+/// </para>
 /// </summary>
 [<Sealed>]
 type WebAppBuilder internal (args : string array) =
@@ -580,6 +588,33 @@ module internal RouteHandlerBuilder =
 /// let app =
 ///     webApp {
 ///         get "/api/clowns/{id}" (fun (db : IDataAccess) id -> db.Get id)
+///     }
+/// </code>
+/// <code lang="fsharp">
+/// open type Microsoft.AspNetCore.Http.StatusCodes
+///
+/// let app =
+///     webApp {
+///         get "/api/clowns/{id}"
+///             [Status200OK, typeof&lt;Clown&gt;]
+///             (fun (db : IDataAccess) id -> db.Get id)
+///     }
+/// </code>
+/// <code lang="fsharp">
+/// open type Microsoft.AspNetCore.Http.StatusCodes
+///
+/// let app =
+///     webApp {
+///         get "/hello" [
+///             Status200OK, typeof&lt;string&gt;
+///             Status404NotFound, null
+///         ] (fun () ->
+///             if DateTime.Today.DayOfWeek = DayOfWeek.Monday then Results.NotFound ()
+///             else Results.Ok "🌎"
+///         ) (fun routeHandler ->
+///             routeHandler.WithOpenApi (fun op -> op.Description &lt;- "Hello, 🌎 — unless it's Monday."; op)
+///             routeHandler.AllowAnonymous ()
+///         )
 ///     }
 /// </code>
 /// </example>
@@ -3335,14 +3370,44 @@ module Patches =
         member this.Patch (builder : WebApplicationBuilder, pattern : Pattern, produces : (int * Type) list, handler : Func<_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _>, ?configure : RouteHandlerBuilder -> _) = this.Patch (builder.Build (), pattern, produces, handler)
 #endif
 
-/// Contains the <c>webApp</c> computation expression builder.
+/// <summary>
+/// Contains the <see cref="T:FSharp.AspNetCore.Builder.WebAppBuilder"/> computation expression builder.
+/// </summary>
 [<AutoOpen>]
 module WebAppBuilder =
+    /// <summary>
     /// Creates a web application using computation expression syntax.
+    /// </summary>
+    /// <example>
+    /// <code lang="fsharp">
+    /// open FSharp.AspNetCore.Builder.CommandLine
+    ///
+    /// let app =
+    ///     webApp {
+    ///         get "/hello" (fun () -> "🌎")
+    ///     }
+    /// </code>
+    /// </example>
     let webApp = WebAppBuilder [||]
 
+    /// <summary>
     /// Contains an alternative <c>webApp</c> builder that accepts command line arguments.
+    /// </summary>
     module CommandLine =
+        /// <summary>
         /// Creates a web application using computation expression syntax
         /// and the given command line arguments.
+        /// </summary>
+        /// <param name="args">The command-line arguments to give to the underlying <see cref="M:Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(System.String[])"/> call.</param>
+        /// <example>
+        /// <code lang="fsharp">
+        /// open System
+        /// open FSharp.AspNetCore.Builder.CommandLine
+        ///
+        /// let app =
+        ///     webApp (Environment.GetCommandLineArgs ()) {
+        ///         get "/hello" (fun () -> "🌎")
+        ///     }
+        /// </code>
+        /// </example>
         let webApp args = WebAppBuilder args
