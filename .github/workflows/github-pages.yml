@@ -33,7 +33,7 @@ jobs:
       run: |
         dotnet fsdocs build \
           --output ./out \
-          --properties "Configuration=Release TargetFramework=net7.0" \
+          --properties Configuration=Release TargetFramework=net7.0 \
           --parameters \
             fsdocs-license-link https://github.com/brianrourkeboll/FSharp.AspNetCore.WebAppBuilder/blob/main/LICENSE.md \
             fsdocs-release-notes-link https://github.com/brianrourkeboll/FSharp.AspNetCore.WebAppBuilder/releases
