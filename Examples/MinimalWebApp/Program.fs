@@ -18,7 +18,7 @@ open type StatusCodes
 
 type private Program = class end
 
-let app builderConfig =
+let app configureBuilder =
     webApp {
         connectionString "SqlDb" SqlConnectionString
         configurationValue "AppSettings:SqlCommandTimeout" SqlCommandTimeout
@@ -30,7 +30,7 @@ let app builderConfig =
             services.AddEndpointsApiExplorer ()
             services.AddSwaggerGen ())
 
-        buildWith builderConfig
+        buildWith configureBuilder
 
         webApp (fun app ->
             app.UseSwagger ()

@@ -10,7 +10,7 @@ open FSharp.AspNetCore.Builder
 open Db
 open Domain
 
-let app builderConfig =
+let app configureBuilder =
     webApp {
         connectionString "SqlDb" SqlConnectionString
         configurationValue "AppSettings:SqlCommandTimeout" SqlCommandTimeout
@@ -23,7 +23,7 @@ let app builderConfig =
             services.AddSwaggerGen ()
             services.AddControllers ())
 
-        buildWith builderConfig
+        buildWith configureBuilder
 
         webApp (fun app ->
             app.UseSwagger ()

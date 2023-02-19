@@ -61,18 +61,18 @@ let app =
         singleton Id.NewId
         singleton typeof<IDataAccess> typeof<DataAccess>
 
-        get "/xs" (fun (dataAccess : IDataAccess) -> Results.Ok (dataAccess.GetAll ()))
+        get "/xs" (fun (db : IDataAccess) -> Results.Ok (db.GetAll ()))
 
-        get "/xs/{id}" (fun (dataAccess : IDataAccess) id ->
-            dataAccess.TryGet id
+        get "/xs/{id}" (fun (db : IDataAccess) id ->
+            db.TryGet id
             |> Option.map Results.Ok
             |> Option.defaultWith Results.NotFound)
 
-        post "/xs" (fun (dataAccess : IDataAccess) newId x ->
-            let x = dataAccess.Create (newId (), x)
+        post "/xs" (fun (db : IDataAccess) newId x ->
+            let x = db.Create (newId (), x)
             Results.Created ($"/xs/{x.Id}", x))
 
-        delete "/xs/{id}" (fun (dataAccess : IDataAccess) id -> Results.NoContent (dataAccess.Delete id))
+        delete "/xs/{id}" (fun (db : IDataAccess) id -> Results.NoContent (db.Delete id))
     }
 
 app.Run ()
@@ -83,7 +83,7 @@ Easily evolve your code to use Swagger UI, [heavyweight controllers](/Examples/M
 #### Program.fs
 
 ```fsharp
-let app builderConfig =
+let app configureBuilder =
     webApp {
         connectionString "SqlDb" SqlConnectionString
         configurationValue "AppSettings:SqlCommandTimeout" SqlCommandTimeout
@@ -96,7 +96,7 @@ let app builderConfig =
             services.AddSwaggerGen ()
             services.AddControllers ())
 
-        buildWith builderConfig
+        buildWith configureBuilder
 
         webApp (fun app ->
             app.UseSwagger ()
