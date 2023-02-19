@@ -1170,6 +1170,23 @@ module Gets =
 ///             Results.Created ($"/clowns/{clown.Id}", clown))
 ///     }
 /// </code>
+/// <code lang="fsharp">
+/// let app =
+///     webApp {
+///         post "/clowns" [
+///             Status201Created,             typeof&lt;Dtos.Get.Clown&gt;
+///             Status400BadRequest,          typeof&lt;ValidationProblemDetails&gt;
+///             Status409Conflict,            typeof&lt;string&gt;
+///             Status500InternalServerError, typeof&lt;ProblemDetails&gt;
+///         ] (fun (logger : ILogger&lt;Program&gt;) mkId (db : IDataAccess) clown ->
+///             // ...
+///             Results.Created ($"/clowns/{id}", clown)
+///         ) (fun routeHandler ->
+///             routeHandler.Accepts (typeof&lt;Dtos.Create.Clown&gt;, MediaTypeNames.Application.Json)
+///             routeHandler.AddFilter&lt;MyEndpointFilter&gt; ()
+///         )
+///     }
+/// </code>
 /// </example>
 [<AutoOpen>]
 module Posts =
@@ -1722,6 +1739,24 @@ module Posts =
 ///         put "/api/clowns/{id}" (fun (db : IDataAccess) id clown -> Results.Ok (db.Update (id, clown)))
 ///     }
 /// </code>
+/// <code lang="fsharp">
+/// let app =
+///     webApp {
+///         put "/clowns/id" [
+///             Status201Created,             typeof&lt;Dtos.Get.Clown&gt;
+///             Status400BadRequest,          typeof&lt;ValidationProblemDetails&gt;
+///             Status404NotFound,            typeof&lt;ValidationProblemDetails&gt;
+///             Status409Conflict,            typeof&lt;string&gt;
+///             Status500InternalServerError, typeof&lt;ProblemDetails&gt;
+///         ] (fun (logger : ILogger&lt;Program&gt;) (db : IDataAccess) id clown ->
+///             // ...
+///             Results.Ok clown
+///         ) (fun routeHandler ->
+///             routeHandler.Accepts (typeof&lt;Dtos.Update.Clown&gt;, MediaTypeNames.Application.Json)
+///             routeHandler.AddFilter&lt;MyEndpointFilter&gt; ()
+///         )
+///     }
+/// </code>
 /// </example>
 [<AutoOpen>]
 module Puts =
@@ -2272,6 +2307,20 @@ module Puts =
 /// let app =
 ///     webApp {
 ///         delete "/api/clowns/{id}" (fun (db : IDataAccess) id -> Results.NoContent (db.Delete id))
+///     }
+/// </code>
+/// <code lang="fsharp">
+/// let app =
+///     webApp {
+///         delete "/clowns/id" [
+///             Status204NoContent,           null
+///             Status500InternalServerError, typeof&lt;ProblemDetails&gt;
+///         ] (fun (logger : ILogger&lt;Program&gt;) (db : IDataAccess) id ->
+///             // ...
+///             Results.NoContent ()
+///         ) (fun routeHandler ->
+///             routeHandler.AddFilter&lt;MyEndpointFilter&gt; ()
+///         )
 ///     }
 /// </code>
 /// </example>

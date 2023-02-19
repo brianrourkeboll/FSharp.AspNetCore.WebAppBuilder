@@ -197,7 +197,7 @@ let app =
             // ...
             Results.Created ($"/clowns/{id}", clown)
         ) (fun routeHandler ->
-            routeHandler.Accepts (typeof<Dtos.Update.Clown>, MediaTypeNames.Application.Json)
+            routeHandler.Accepts (typeof<Dtos.Create.Clown>, MediaTypeNames.Application.Json)
             routeHandler.AddFilter<MyEndpointFilter> ()
         )
     }
