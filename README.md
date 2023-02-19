@@ -6,6 +6,10 @@ The `webApp` computation expression lets you define ASP.NET Core web application
 
 Get it on NuGet (currently still in pre-release): [FSharp.AspNetCore.WebAppBuilder](https://www.nuget.org/packages/FSharp.AspNetCore.WebAppBuilder).
 
+## API documentation
+
+See the API documentation [here](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/index.html).
+
 ## Examples
 
 ```fsharp
@@ -147,6 +151,8 @@ A few more specialized custom operations are provided to make certain common sce
 - `configurationValue`, for adding a strongly-typed configuration value to the apps' dependency injection container.
 - `singleton`, for adding a singleton instance of a dependency to the app's dependency injection container.
 - `hostedService`, for adding a hosted background service to the app's dependency injection container.
+
+See the [API documentation](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-webappbuilder.html) for the full set of supported operations, with examples.
 
 The number of other special cases that could be added is practically infinite, corresponding to the countless first- and third-party `.Add*` extension methods and their even-more-countless overloads—`scoped`, `transient`, `serverSideBlazor`… A few more may be added, but it is unlikely to be many.
 
