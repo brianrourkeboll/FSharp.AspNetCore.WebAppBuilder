@@ -131,6 +131,8 @@ let ``POST /clowns returns 400 Bad Request if the shoe size is too small`` (Bad 
     |> Async.RunSynchronously
 ```
 
+See [Examples](./Examples) for some more realistic (and runnable) examples.
+
 ## The `webApp` computation expression
 
 The library includes custom operations for each of the top-level properties of `Microsoft.AspNetCore.Builder.WebApplicationBuilder`, one for the builder itself, and one for the `Microsoft.AspNetCore.Builder.WebApplication` once it's been built:
