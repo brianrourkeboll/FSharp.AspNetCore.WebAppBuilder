@@ -6,6 +6,7 @@ body {
 #fsdocs-content h2 code,
 #fsdocs-content h3 code {
     font-weight: 300;
+    font-size: unset;
 }
 
 #fsdocs-content p,
