@@ -4,13 +4,15 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>FSharp.AspNetCore.WebAppBuilder</PackageId>
-    <Version>0.1.0-alpha.5</Version>
+    <Version>0.1.0-alpha.6</Version>
     <Authors>Brian Rourke Boll</Authors>
     <Description>A computation expression for succinctly defining ASP.NET Core web apps, including support for minimal APIs.</Description>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/brianrourkeboll/FSharp.AspNetCore.WebAppBuilder</RepositoryUrl>
+    <PackageProjectUrl>https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>F#;fsharp;aspnetcore</PackageTags>
     <PackageIcon>logo.png</PackageIcon>
     <IncludeSymbols>true</IncludeSymbols>

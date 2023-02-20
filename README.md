@@ -6,6 +6,10 @@ The `webApp` computation expression lets you define ASP.NET Core web application
 
 Get it on NuGet (currently still in pre-release): [FSharp.AspNetCore.WebAppBuilder](https://www.nuget.org/packages/FSharp.AspNetCore.WebAppBuilder).
 
+```powershell
+dotnet add package FSharp.AspNetCore.WebAppBuilder
+```
+
 ## API documentation
 
 See the API documentation [here](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/index.html).
