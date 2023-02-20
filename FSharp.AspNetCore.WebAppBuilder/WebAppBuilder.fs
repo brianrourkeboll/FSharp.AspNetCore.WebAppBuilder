@@ -2312,7 +2312,7 @@ module Puts =
 /// <code lang="fsharp">
 /// let app =
 ///     webApp {
-///         delete "/clowns/id" [
+///         delete "/clowns/{id}" [
 ///             Status204NoContent,           null
 ///             Status500InternalServerError, typeof&lt;ProblemDetails&gt;
 ///         ] (fun (logger : ILogger&lt;Program&gt;) (db : IDataAccess) id ->
