@@ -331,8 +331,8 @@ type WebAppBuilder internal (args : string array) =
         builder
 
     /// <summary>
-    /// Applies the given <paramref name="configureOptions"/> action to the options
-    /// the specified type.
+    /// Applies the given <paramref name="configureOptions"/> action to the registered options
+    /// of the specified type.
     /// </summary>
     /// <param name="builder">The web application builder.</param>
     /// <param name="configureOptions">The action to apply to the options.</param>
