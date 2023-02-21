@@ -321,13 +321,33 @@ type WebAppBuilder internal (args : string array) =
     /// <code lang="fsharp">
     /// let app =
     ///     webApp {
-    ///         configure (fun config -> Service config["MyKey"])
+    ///         fromConfig (fun config -> Service config["MyKey"])
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("fromConfig")>]
+    member _.FromConfiguration (builder : WebApplicationBuilder, configure : IConfiguration -> 'ConfiguredValue when 'ConfiguredValue : not struct) =
+        ignore <| builder.Services.AddSingleton (implementationInstance=configure builder.Configuration)
+        builder
+
+    /// <summary>
+    /// Applies the given <paramref name="configureOptions"/> action to the options
+    /// the specified type.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="configureOptions">The action to apply to the options.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         configure (fun (jsonOptions : JsonOptions) ->
+    ///             jsonOptions.SerializerOptions.Converters.Add (JsonStringEnumConverter ()))
     ///     }
     /// </code>
     /// </example>
     [<CustomOperation("configure")>]
-    member _.Configure (builder : WebApplicationBuilder, configure : IConfiguration -> 'ConfiguredValue when 'ConfiguredValue : not struct) =
-        ignore <| builder.Services.AddSingleton (implementationInstance=configure builder.Configuration)
+    member _.Configure (builder : WebApplicationBuilder, configureOptions : 'TOptions -> _) =
+        ignore <| builder.Services.Configure (fun service -> ignore (configureOptions service))
         builder
 
     /// <summary>
@@ -357,7 +377,7 @@ type WebAppBuilder internal (args : string array) =
     /// </example>
     [<CustomOperation("connectionString")>]
     member this.ConnectionString (builder : WebApplicationBuilder, name : string, ctor : string -> 'ConnectionString when 'ConnectionString : not struct) =
-        this.Configure (builder, fun config ->
+        this.FromConfiguration (builder, fun config ->
             let connectionString = config.GetConnectionString name
 
             if String.IsNullOrWhiteSpace connectionString then
@@ -391,7 +411,7 @@ type WebAppBuilder internal (args : string array) =
     /// </example>
     [<CustomOperation("configurationValue")>]
     member this.ConfigurationValue (builder : WebApplicationBuilder, key : string, ctor : 'Value -> 'ConfiguredValue when 'ConfiguredValue : not struct) =
-        this.Configure (builder, fun config ->
+        this.FromConfiguration (builder, fun config ->
             let value = config.GetRequiredSection key
 
             if String.IsNullOrWhiteSpace value.Value then
