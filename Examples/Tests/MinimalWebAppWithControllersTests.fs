@@ -54,20 +54,20 @@ let tests =
                             content =! expected
                     }
 
-                do! expectAtRoute "clowns" OK []
-                use! created = client.PostAsJsonAsync ("clowns", clown)
+                do! expectAtRoute "api/clowns" OK []
+                use! created = client.PostAsJsonAsync ("api/clowns", clown)
                 created.StatusCode =! Created
                 let! createdClown = created.Content.ReadFromJsonAsync<ClownShape> ()
                 do! expectAtRoute $"{created.Headers.Location}" OK createdClown
-                do! expectAtRoute "clowns" OK [createdClown]
+                do! expectAtRoute "api/clowns" OK [createdClown]
                 use! updated = client.PutAsJsonAsync (created.Headers.Location, {| createdClown with ShoeSize = value |})
                 updated.StatusCode =! OK
                 let! updatedClown = updated.Content.ReadFromJsonAsync<ClownShape> ()
                 do! expectAtRoute $"{created.Headers.Location}" OK updatedClown
-                do! expectAtRoute "clowns" OK [updatedClown]
+                do! expectAtRoute "api/clowns" OK [updatedClown]
                 use! deleted = client.DeleteAsync $"{created.Headers.Location}"
                 deleted.StatusCode =! NoContent
                 do! expectAtRoute $"{created.Headers.Location}" NotFound null
-                do! expectAtRoute "clowns" OK []
+                do! expectAtRoute "api/clowns" OK []
             }).GetAwaiter().GetResult()
     ]

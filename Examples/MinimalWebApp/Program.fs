@@ -1,7 +1,5 @@
 module Examples.MinimalWebApp.Program
 
-#nowarn "20" // Don't warn about unignored values.
-
 open FSharp.AspNetCore.Builder
 open FsToolkit.ErrorHandling
 open Microsoft.AspNetCore.Builder
@@ -15,6 +13,8 @@ open Db
 open Domain
 open Dtos
 open type StatusCodes
+
+#nowarn "20" // Don't warn about unignored values.
 
 type private Program = class end
 
@@ -88,7 +88,7 @@ let app configureBuilder =
                 | IOError (Create.DbTimeout e) -> logger.LogWarning ("A database timeout occurred when trying to get the clown.", e)
                 | IOError (Create.NameConflict _) | ValidationErrors _ -> ())
             |> AsyncResult.foldResult
-                (Get.Clown.toDto >> fun clown -> Results.Created ($"/clowns/{clown.Id}", clown))
+                (Get.Clown.toDto >> fun clown -> Results.Created ($"/api/clowns/{clown.Id}", clown))
                 (function
                  | ValidationErrors es -> Results.ValidationProblem es
                  | IOError (Create.NameConflict existingId) -> Results.Conflict ($"There is an existing clown with ID {existingId} with the same name.")

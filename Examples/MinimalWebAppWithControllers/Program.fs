@@ -1,7 +1,5 @@
 module Examples.MinimalWebAppWithControllers.Program
 
-#nowarn "20" // Don't warn about unignored values.
-
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
@@ -9,6 +7,8 @@ open Microsoft.Extensions.Logging
 open FSharp.AspNetCore.Builder
 open Db
 open Domain
+
+#nowarn "20" // Don't warn about unignored values.
 
 let app configureBuilder =
     webApp {
