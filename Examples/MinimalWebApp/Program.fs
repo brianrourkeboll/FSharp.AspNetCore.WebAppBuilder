@@ -36,7 +36,7 @@ let app configureBuilder =
             app.UseSwagger ()
             app.UseSwaggerUI ())
 
-        get "/clowns" [
+        get "/api/clowns" [
             Status200OK,                  typeof<seq<Dtos.Get.Clown>>
             Status500InternalServerError, typeof<ProblemDetails>
         ] (fun (logger : ILogger<Program>) (db : IDataAccess) ->
@@ -55,7 +55,7 @@ let app configureBuilder =
             routeHandler.AllowAnonymous ()
         )
 
-        get "/clowns/{id}" [
+        get "/api/clowns/{id}" [
             Status200OK,                  typeof<Dtos.Get.Clown>
             Status404NotFound,            null
             Status500InternalServerError, typeof<ProblemDetails>
@@ -73,7 +73,7 @@ let app configureBuilder =
                  | Get.One.DbTimeout _ -> Results.Problem "A database timeout occurred.")
             |> Async.StartAsTask)
 
-        post "/clowns" [
+        post "/api/clowns" [
             Status201Created,             typeof<Dtos.Get.Clown>
             Status400BadRequest,          typeof<ValidationProblemDetails>
             Status409Conflict,            typeof<string>
@@ -96,7 +96,7 @@ let app configureBuilder =
                  | IOError (Create.DbTimeout _) -> Results.Problem "A database timeout occurred.")
             |> Async.StartAsTask)
 
-        put "/clowns/{id}" [
+        put "/api/clowns/{id}" [
             Status200OK,                  typeof<Dtos.Get.Clown>
             Status400BadRequest,          typeof<ValidationProblemDetails>
             Status404NotFound,            null
@@ -121,7 +121,7 @@ let app configureBuilder =
                  | IOError (Update.DbTimeout _) -> Results.Problem "A database timeout occurred.")
             |> Async.StartAsTask)
 
-        delete "/clowns/{id}" [
+        delete "/api/clowns/{id}" [
             Status204NoContent,           null
             Status500InternalServerError, typeof<ProblemDetails>
         ] (fun (logger : ILogger<Program>) (db : IDataAccess) id ->

@@ -13,7 +13,7 @@ open type StatusCodes
 
 [<Sealed>]
 [<ApiController>]
-[<Route("clowns")>]
+[<Route("api/clowns")>]
 [<Produces(MediaTypeNames.Application.Json)>]
 type ClownsController
     (

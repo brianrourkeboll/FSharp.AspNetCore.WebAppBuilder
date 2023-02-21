@@ -15,7 +15,7 @@ open Microsoft.Extensions.Hosting
 /// <summary>
 /// Creates a web application using computation expression syntax.
 /// <para>
-/// See also:
+/// See also: 
 /// <seealso cref="T:FSharp.AspNetCore.Builder.Gets"/>, 
 /// <seealso cref="T:FSharp.AspNetCore.Builder.Posts"/>, 
 /// <seealso cref="T:FSharp.AspNetCore.Builder.Puts"/>, 
@@ -555,14 +555,11 @@ type WebAppBuilder internal (args : string array) =
 type Pattern = string
 
 module internal Pattern =
-    open System.Globalization
-
     let toGroupName (pattern : Pattern) =
         if isNull pattern then nullArg (nameof pattern) else
         pattern.Split ('/', StringSplitOptions.RemoveEmptyEntries)
         |> Array.tryFindBack (not << String.exists (function '{' | '}' -> true | _ -> false))
         |> Option.bind (fun last -> last.Split ('?', StringSplitOptions.RemoveEmptyEntries) |> Array.tryHead)
-        |> Option.map (fun groupName -> if groupName |> String.exists Char.IsUpper then CultureInfo.CurrentCulture.TextInfo.ToTitleCase groupName else groupName)
         |> Option.toObj
 
 open Microsoft.AspNetCore.Http
