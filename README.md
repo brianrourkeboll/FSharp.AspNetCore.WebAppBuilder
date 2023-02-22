@@ -156,7 +156,10 @@ A few more specialized custom operations are provided to make certain common sce
 - `connectionString`, for adding a strongly-typed connection string to the app's dependency injection container.
 - `configurationValue`, for adding a strongly-typed configuration value to the apps' dependency injection container.
 - `singleton`, for adding a singleton instance of a dependency to the app's dependency injection container.
+- `scoped`, for adding a scoped instance of a dependency to the app's dependency injection container.
+- `transient`, for adding a transient instance of a dependency to the app's dependency injection container.
 - `hostedService`, for adding a hosted background service to the app's dependency injection container.
+- `configure`, for configuring options registered via the "options pattern."
 
 See the [API documentation](https://brianrourkeboll.github.io/FSharp.AspNetCore.WebAppBuilder/reference/fsharp-aspnetcore-builder-webappbuilder.html) for the full set of supported operations, with examples.
 

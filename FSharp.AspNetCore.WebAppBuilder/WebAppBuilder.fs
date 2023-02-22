@@ -313,6 +313,132 @@ type WebAppBuilder internal (args : string array) =
         builder
 
     /// <summary>
+    /// Adds a scoped service of the type specified in <paramref name="serviceType"/> to the
+    /// app's service collection.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         scoped typeof&lt;Service&gt;
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("scoped")>]
+    member _.Scoped (builder : WebApplicationBuilder, serviceType : Type) =
+        ignore <| builder.Services.AddScoped serviceType
+        builder
+
+    /// <summary>
+    /// Adds a scoped service of the type specified in <paramref name="serviceType"/> with
+    /// an implementation of the type specified in <paramref name="implementationType"/> to the
+    /// app's service collection.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <param name="implementationType">The type of the service implementation to add.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         scoped typeof&lt;IService&gt; typeof&lt;Service&gt;
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("scoped")>]
+    member _.Scoped (builder : WebApplicationBuilder, serviceType : Type, implementationType : Type) =
+        ignore <| builder.Services.AddScoped (serviceType, implementationType)
+        builder
+
+    /// <summary>
+    /// Adds a scoped service of the type specified in <paramref name="serviceType"/> using
+    /// an implementation provided by applying the given <paramref name="implementationFactory"/> to the
+    /// app's service provider.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <param name="implementationFactory">A function that produces the service implementation.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         scoped
+    ///             typeof&lt;IService&gt;
+    ///             (fun serviceProvider -> Service (serviceProvider.GetRequiredService&lt;OtherService&gt; ()))
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("scoped")>]
+    member _.Scoped (builder : WebApplicationBuilder, serviceType : Type, implementationFactory : IServiceProvider -> 'TImplementation) =
+        ignore <| builder.Services.AddScoped (serviceType=serviceType, implementationFactory=(implementationFactory >> box))
+        builder
+
+    /// <summary>
+    /// Adds a transient service of the type specified in <paramref name="serviceType"/> to the
+    /// app's service collection.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         transient typeof&lt;Service&gt;
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("transient")>]
+    member _.Transient (builder : WebApplicationBuilder, serviceType : Type) =
+        ignore <| builder.Services.AddTransient serviceType
+        builder
+
+    /// <summary>
+    /// Adds a transient service of the type specified in <paramref name="serviceType"/> with
+    /// an implementation of the type specified in <paramref name="implementationType"/> to the
+    /// app's service collection.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <param name="implementationType">The type of the service implementation to add.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         transient typeof&lt;IService&gt; typeof&lt;Service&gt;
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("transient")>]
+    member _.Transient (builder : WebApplicationBuilder, serviceType : Type, implementationType : Type) =
+        ignore <| builder.Services.AddTransient (serviceType, implementationType)
+        builder
+
+    /// <summary>
+    /// Adds a transient service of the type specified in <paramref name="serviceType"/> using
+    /// an implementation provided by applying the given <paramref name="implementationFactory"/> to the
+    /// app's service provider.
+    /// </summary>
+    /// <param name="builder">The web application builder.</param>
+    /// <param name="serviceType">The type of the service to add.</param>
+    /// <param name="implementationFactory">A function that produces the service implementation.</param>
+    /// <example>
+    /// <code lang="fsharp">
+    /// let app =
+    ///     webApp {
+    ///         transient
+    ///             typeof&lt;IService&gt;
+    ///             (fun serviceProvider -> Service (serviceProvider.GetRequiredService&lt;OtherService&gt; ()))
+    ///     }
+    /// </code>
+    /// </example>
+    [<CustomOperation("transient")>]
+    member _.Transient (builder : WebApplicationBuilder, serviceType : Type, implementationFactory : IServiceProvider -> 'TImplementation) =
+        ignore <| builder.Services.AddTransient (serviceType=serviceType, implementationFactory=(implementationFactory >> box))
+        builder
+
+    /// <summary>
     /// Adds a singleton service produced by applying the given <paramref name="configure"/> function
     /// to the <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder"/>'s
     /// <see cref="P:Microsoft.AspNetCore.Builder.WebApplicationBuilder.Configuration"/> property.
