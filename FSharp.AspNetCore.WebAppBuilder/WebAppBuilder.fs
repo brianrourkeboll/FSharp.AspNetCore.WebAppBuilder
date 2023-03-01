@@ -3563,6 +3563,37 @@ module Patches =
 #endif
 
 /// <summary>
+/// Contains priority 1 overloads for the <see cref="T:FSharp.AspNetCore.Builder.WebAppBuilder"/>
+/// computation expression.
+/// </summary>
+[<AutoOpen>]
+module Priority1 =
+    type WebAppBuilder with
+        /// <summary>
+        /// Applies the given action to the <see cref="P:Microsoft.AspNetCore.Builder.WebApplicationBuilder.Services"/>
+        /// and <see cref="P:Microsoft.AspNetCore.Builder.WebApplicationBuilder.Configuration"/> properties
+        /// of the <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder"/> being used to build the app.
+        /// </summary>
+        /// <param name="builder">The web application builder.</param>
+        /// <param name="configureServices">The function to apply to the web application builder's service collection.</param>
+        /// <example>
+        /// <code>
+        /// let app =
+        ///     webApp {
+        ///         services (fun services config ->
+        ///             services.Configure&lt;MyOptions&gt; ("MyOptionsName", config.GetSection "MyOptionsSection")
+        ///             services.AddEndpointsApiExplorer ()
+        ///             services.AddSwaggerGen ()
+        ///             services.AddControllers ())
+        ///     }
+        /// </code>
+        /// </example>
+        [<CustomOperation("services")>]
+        member _.Services (builder : WebApplicationBuilder, configureServices) =
+            ignore (configureServices builder.Services builder.Configuration)
+            builder
+
+/// <summary>
 /// Contains the <see cref="T:FSharp.AspNetCore.Builder.WebAppBuilder"/> computation expression builder.
 /// </summary>
 [<AutoOpen>]
