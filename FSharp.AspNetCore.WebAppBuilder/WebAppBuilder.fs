@@ -94,6 +94,9 @@ type WebAppBuilder internal (args : string array) =
     /// Applies the given action to the <see cref="P:Microsoft.AspNetCore.Builder.WebApplicationBuilder.Services"/>
     /// and <see cref="P:Microsoft.AspNetCore.Builder.WebApplicationBuilder.Configuration"/> properties
     /// of the <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder"/> being used to build the app.
+    /// <para>
+    /// See also: <seealso cref="M:FSharp.AspNetCore.Builder.Priority1.Services"/>
+    /// </para>
     /// </summary>
     /// <param name="builder">The web application builder.</param>
     /// <param name="configureServices">The function to apply to the web application builder's service collection.</param>
