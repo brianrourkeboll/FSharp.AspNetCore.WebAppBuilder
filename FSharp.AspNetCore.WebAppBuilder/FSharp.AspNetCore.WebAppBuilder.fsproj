@@ -18,7 +18,8 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Copyright>© 2023 Brian Rourke Boll</Copyright>
     <!-- FS3390: XML documentation validation -->
-    <WarnOn>$(WarnOn);3390</WarnOn>
+    <!-- FS1182: Unused values -->
+    <WarnOn>$(WarnOn);3390;1182</WarnOn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
