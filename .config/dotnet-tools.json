@@ -3,10 +3,11 @@
   "isRoot": true,
   "tools": {
     "fsdocs-tool": {
-      "version": "17.2.2",
+      "version": "20.0.0",
       "commands": [
         "fsdocs"
-      ]
+      ],
+      "rollForward": false
     }
   }
 }
