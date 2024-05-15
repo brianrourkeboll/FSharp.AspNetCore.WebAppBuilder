@@ -65,8 +65,8 @@ type ClownsController
         |> AsyncResult.mapError ValidationErrors.ofList
         |> AsyncResult.bind (dataAccess.Create >> AsyncResult.mapError IOError)
         |> AsyncResult.teeError (function
-            | IOError (Create.DbExn e) -> logger.LogError ("A database exception occurred when trying to get the clown.", e)
-            | IOError (Create.DbTimeout e) -> logger.LogWarning ("A database timeout occurred when trying to get the clown.", e)
+            | IOError (Create.DbExn e) -> logger.LogError ("A database exception occurred when trying to create the clown.", e)
+            | IOError (Create.DbTimeout e) -> logger.LogWarning ("A database timeout occurred when trying to create the clown.", e)
             | IOError (Create.NameConflict _) | ValidationErrors _ -> ())
         |> AsyncResult.foldResult
             (Get.Clown.toDto >> fun clown -> Results.Created ($"/api/clowns/{clown.Id}", clown))
@@ -88,9 +88,9 @@ type ClownsController
         |> AsyncResult.mapError ValidationErrors.ofList
         |> AsyncResult.bind (dataAccess.Update >> AsyncResult.mapError IOError)
         |> AsyncResult.teeError (function
-            | IOError (Update.DbExn e) -> logger.LogError ("A database exception occurred when trying to get the clown.", e)
-            | IOError (Update.DbTimeout e) -> logger.LogWarning ("A database timeout occurred when trying to get the clown.", e)
-            | IOError (Update.NotFound _) | IOError (Update.NameConflict _) | ValidationErrors _ -> ())
+            | IOError (Update.DbExn e) -> logger.LogError ("A database exception occurred when trying to update the clown.", e)
+            | IOError (Update.DbTimeout e) -> logger.LogWarning ("A database timeout occurred when trying to update the clown.", e)
+            | IOError Update.NotFound | IOError (Update.NameConflict _) | ValidationErrors _ -> ())
         |> AsyncResult.foldResult
             (Get.Clown.toDto >> Results.Ok)
             (function
@@ -106,8 +106,8 @@ type ClownsController
     member _.DeleteClown id =
         dataAccess.Delete id
         |> AsyncResult.teeError (function
-            | Delete.DbExn e -> logger.LogError ("A database exception occurred when trying to get the clowns.", e)
-            | Delete.DbTimeout e -> logger.LogWarning ("A database timeout occurred when trying to get the clowns.", e))
+            | Delete.DbExn e -> logger.LogError ("A database exception occurred when trying to delete the clown.", e)
+            | Delete.DbTimeout e -> logger.LogWarning ("A database timeout occurred when trying to delete the clown.", e))
         |> AsyncResult.foldResult
             Results.NoContent
             (function
